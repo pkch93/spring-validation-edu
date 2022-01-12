@@ -117,4 +117,14 @@ class PostApiControllerTest {
 
         assertThat(mvcResult.getResponse().getStatus()).isEqualTo(HttpStatus.BAD_REQUEST.value());
     }
+
+    @Test
+    void readPost() throws Exception {
+        Long postId = 0L;
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/api/posts/" + postId))
+                .andDo(print())
+                .andReturn();
+
+        assertThat(mvcResult.getResponse().getStatus()).isEqualTo(HttpStatus.INTERNAL_SERVER_ERROR.value());
+    }
 }

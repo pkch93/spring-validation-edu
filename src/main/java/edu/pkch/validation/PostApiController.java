@@ -2,15 +2,14 @@ package edu.pkch.validation;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
 
 @Slf4j
 @RestController
+@Validated
 @RequestMapping("/api/posts")
 public class PostApiController {
 
@@ -27,5 +26,10 @@ public class PostApiController {
     @PostMapping("/validated")
     public void createPostByValidated(@Validated @RequestBody PostRequest request) {
         log.info("request: {}", request);
+    }
+
+    @GetMapping("/{postId}")
+    public void readPost(@PathVariable @Min(1) Long postId) {
+        log.info("postId: {}", postId);
     }
 }
