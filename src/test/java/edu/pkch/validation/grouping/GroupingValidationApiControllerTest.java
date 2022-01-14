@@ -26,7 +26,8 @@ class GroupingValidationApiControllerTest {
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/api/grouping/valid")
                 .queryParam("a", "3")
                 .queryParam("b", "10")
-                .queryParam("c", "100"))
+                .queryParam("c", "100")
+                .queryParam("d", "100"))
                 .andDo(print())
                 .andReturn();
 
@@ -39,7 +40,8 @@ class GroupingValidationApiControllerTest {
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/api/grouping/valid/method-groupA")
                 .queryParam("a", "3")
                 .queryParam("b", "10")
-                .queryParam("c", "100"))
+                .queryParam("c", "100")
+                .queryParam("d", "100"))
                 .andDo(print())
                 .andReturn();
 
@@ -52,7 +54,8 @@ class GroupingValidationApiControllerTest {
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/api/grouping/valid/parameter-groupA")
                 .queryParam("a", "10")
                 .queryParam("b", "5")
-                .queryParam("c", "100"))
+                .queryParam("c", "100")
+                .queryParam("d", "100"))
                 .andDo(print())
                 .andReturn();
 
@@ -65,7 +68,8 @@ class GroupingValidationApiControllerTest {
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("/api/grouping/valid/parameter-groupA")
                 .queryParam("a", "3")
                 .queryParam("b", "10")
-                .queryParam("c", "100"))
+                .queryParam("c", "100")
+                .queryParam("d", "100"))
                 .andDo(print())
                 .andReturn();
 
